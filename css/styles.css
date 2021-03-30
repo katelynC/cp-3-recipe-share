@@ -103,11 +103,24 @@ h1 {
 p {
   font-family: verdana;
 	font-size: 18px;
-
 }
 
 .body {
   padding: 35px;
+}
+
+.theList {
+  padding: 0px 45px;
+}
+
+.ingredientSubmit .recipeSubmit {
+  /*padding: 100px;*/
+  color: #414141;
+}
+
+.edamam-badge {
+  max-width: 15%;
+  align: left;
 }
 
 .selector-for-some-widget {

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Health Analysis</title>
+
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+</head>
+
+<body>
+
+
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #C1E9FF">
+    <!-- Changed from:background-color: #B7E0FC  -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/my-cookbook.html">Cookbook</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/recipes.html">Explore Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/health-analysis.html">Health Analysis</a>
+        </li>
+      
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="body">
+    <h2>Recipe: <a href="https://www.landolakes.com/recipe/17244/caramel-topped-ice-cream-dessert/">Easy Four-Layer
+        Chocolate Dessert</a></h2>
+    <p>Here is where you'll find the nutrition break-down for a certain food item.</p>
+    <br>
+    <p>Recipe Ingredients...</p>
+    <ul class="theList">
+      <li>
+        <p>2 cups (about 16) finely crushed shortbread cookies</p>
+      </li>
+      <li>
+        <p>1/4 cup cashews, finely chopped</p>
+      </li>
+      <li>
+        <p>1/3 cup Land O Lakes® Butter, melted</p>
+      </li>
+      <li>
+        <p>1 half gallon vanilla ice cream, softened</p>
+      </li>
+      <li>
+        <p>1 cup semi-sweet chocolate chips</p>
+      </li>
+      <li>
+        <p>1 1/2 cups powdered sugar</p>
+      </li>
+      <li>
+        <p>1/2 cup Land O Lakes® Butter</p>
+      </li>
+      <li>
+        <p>2 (5-ounce) cans evaporated milk</p>
+      </li>
+      <li>
+        <p>1 teaspoon vanilla</p>
+      </li>
+      <li>
+        <p>1 cup pretzel sticks, coarsely crushed</p>
+      </li>
+      <li>
+        <p>1/2 cup cashews, coarsely chopped</p>
+      </li>
+      <li>
+        <p>1 (12-ounce) jar caramel ice cream topping, warmed</p>
+      </li>
+    </ul>
+    <br />
+
+    <form>
+      <label>
+        <p>Enter any singular food item below. (Copy from above)</p>
+      </label> <br />
+      <textarea id="ingredientInput" name="ingredients" rows="1" cols="60"></textarea> <br />
+      <input id="ingredientSubmit" type="submit" value="Submit"></input>
+      <div id="edamam-badge" data-color="white"></div>
+    </form>
+
+    <br />
+    <div id="nutritionResults"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-lg-start" style="background-color: #35779E;">
+    <!-- Dark blue footer-->
+    <div class="text-center text-white p-3" style="background-color: #35779E;">
+      © 2021 Private Link:
+      <a class="text-white" href="https://github.com/katelynC/cp-2-recipe-share/">GitHub.com</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script async text="type/javascript" src="/script.js"></script>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
