@@ -98,7 +98,7 @@
 
     <br />
     <div id="recipeResults"></div>
-    
+
 <div id="app">
     <h3>Leave your review below!</h3>
     <form v-on:submit.prevent="addComment">
@@ -113,7 +113,7 @@
     <div v-for="comment in comments" id="todaysdate">
       <hr>
       <p>{{comment.text}}</p>
-      <p><i>-- {{comment.author}}, commented on {{comment.time}}</i></p>
+      <p><i>-- {{comment.author}}</i></p>
     </div>
 </div>
   </div>
