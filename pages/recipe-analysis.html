@@ -98,6 +98,24 @@
 
     <br />
     <div id="recipeResults"></div>
+    
+<div id="app">
+    <h3>Leave your review below!</h3>
+    <form v-on:submit.prevent="addComment">
+      <input v-model="addedName" placeholder="Name"></p>
+      <textarea v-model="addedComment"></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <br />
+    <h3>Reviews</h3>
+    <div v-for="comment in comments" id="todaysdate">
+      <hr>
+      <p>{{comment.text}}</p>
+      <p><i>-- {{comment.author}}, commented on {{comment.time}}</i></p>
+    </div>
+</div>
   </div>
 
   <!-- Footer -->
@@ -108,6 +126,11 @@
       <a class="text-white" href="https://github.com/katelynC/cp-2-recipe-share/">GitHub.com</a>
     </div>
   </footer>
+
+  <script type="text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../comment-script.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
   <script async text="type/javascript" src="/recipeScript.js"></script>
