@@ -5,9 +5,11 @@ import router from './router'
 Vue.config.productionTip = false
 
 import mock from './mock-data.js'
+import mock2 from './mock-reviews.js'
 
 let data = {
-  recipes: mock, // replaced "products: mock;"
+  recipes: mock,
+  reviews: mock2
 }
 
 new Vue({

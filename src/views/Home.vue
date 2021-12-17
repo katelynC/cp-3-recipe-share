@@ -8,60 +8,65 @@
       under the "Recipe Analysis" tab!</p>
     <br>
 
-    <!-- ADD THIS BACK IN !!<br />
+    <br />
     <div id="app2">
-    <h3>Website Reviews</h3>
-      <div v-for="review in reviews">
+      <h3>Website Reviews</h3>
+      <div v-for="review in reviews" :key="review.id">
         <hr>
         <p>{{review.text}}</p>
         <p><i>- {{review.name}}</i></p>
       </div>
-    </div> -->
+      <br />
+      <h3>Add a Review</h3>
+      <p>Your honest review could instantly help others find and share new and favorite recipes!</p>
+      <hr>
+      <div class="format">
+      <form v-on:submit.prevent="addComment">
+        <input class="in" v-model="addedName" placeholder="Name" />
+        <textarea v-model="addedComment" placeholder="I love this website because..."></textarea>
+        <br />
+        <button type="submit">Share</button>
+      </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  //let app2 = new Vue({
-  /* ADD BACK IN !! export default {
-    el: '#app2',
-    data: {
-      addedName: '',
-      addedComment: '',
-      comments: [],
-      reviews: [{
-          name: 'Mary Jane, mother of 5',
-          text: 'I absolutely love using this website to discover and store all of my recipes, so I can easily share them with my college-age daughters!'
-        },
-        {
-          name: 'Kathryn Reynolds, grandmother',
-          text: 'I have collected and saved all of my favorite family recipes here, so my grandkids can keep cooking them!'
-        }
-      ]
+  export default {
+    name: 'Home',
+    data() {
+      return {
+        addedName: '',
+        addedComment: '',
+        review: {}
+      }
+    },
+    computed: {
+      reviews() {
+        return this.$root.$data.reviews; // Declared inside of main.js
+      }
     },
     methods: {
       addComment() {
-        if (this.comments.length === 0)
-          this.comments = new Array;
+        if (this.$root.$data.reviews.length === 0)
+          this.$root.$data.reviews = new Array;
 
-        this.comments.push({
-          author: this.addedName,
+        this.$root.$data.reviews.push({
+          id: this.$root.$data.reviews.length,
+          name: this.addedName,
           text: this.addedComment,
         });
         this.addedName = '';
         this.addedComment = '';
       },
-    }
-  }*/
-
-  /*var demo = new Vue({
-    el: '#demo',
-    data: {
-      info: ["I just love using this website!", "Other review", "Third review"]
-    }
-  });*/
+    },
+  }
 </script>
 
 <style>
+  @import "https://fonts.googleapis.com/css?family=Montserrat:400,700"
+
   * {
     margin: 0;
     padding: 0;
@@ -77,6 +82,19 @@
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+
+  button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
   }
 
   /* The Masonry Container */
@@ -136,11 +154,25 @@
   body {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 20px;
-    /* WHY is this not updating?! */
     color: #414141;
     padding: 50px auto;
   }
 
+  .in, textarea {
+    padding: 5px;
+    margin: 10px;
+  }
+
+  button {
+    margin: 10px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+  }
+
+  .format {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
 
   .jumbotron {
     margin: 0;
