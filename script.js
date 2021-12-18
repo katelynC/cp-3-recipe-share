@@ -19,6 +19,7 @@ document.getElementById("ingredientSubmit").addEventListener("click", function(e
   for (var i = 0; i < words.length - 1; i++) {
     url += words[i] + "%20";
   }
+  url += words[words.length - 1]
   /* ES5 without the for loop:
   value.split('').forEach(function(c) {
     if (c === ' ' && x < value.length()) url += "%20";

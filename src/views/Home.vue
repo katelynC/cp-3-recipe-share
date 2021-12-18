@@ -15,18 +15,19 @@
         <hr>
         <p>{{review.text}}</p>
         <p><i>- {{review.name}}</i></p>
+        <div v-if="review.isMine"><button type="submit" v-on:click="deleteReview(review)">Delete</button></div>
       </div>
       <br />
       <h3>Add a Review</h3>
       <p>Your honest review could instantly help others find and share new and favorite recipes!</p>
       <hr>
       <div class="format">
-      <form v-on:submit.prevent="addComment">
-        <input class="in" v-model="addedName" placeholder="Name" />
-        <textarea v-model="addedComment" placeholder="I love this website because..."></textarea>
-        <br />
-        <button type="submit">Share</button>
-      </form>
+        <form v-on:submit.prevent="addComment">
+          <input class="in" v-model="addedName" placeholder="Name" />
+          <textarea v-model="addedComment" placeholder="I love this website because..."></textarea>
+          <br />
+          <button type="submit">Share</button>
+        </form>
       </div>
     </div>
   </div>
@@ -39,7 +40,7 @@
       return {
         addedName: '',
         addedComment: '',
-        review: {}
+        review: {},
       }
     },
     computed: {
@@ -49,17 +50,25 @@
     },
     methods: {
       addComment() {
-        if (this.$root.$data.reviews.length === 0)
+        if (this.$root.$data.reviews.length === 0) {
           this.$root.$data.reviews = new Array;
+        }
 
         this.$root.$data.reviews.push({
           id: this.$root.$data.reviews.length,
           name: this.addedName,
           text: this.addedComment,
+          isMine: true,
         });
         this.addedName = '';
         this.addedComment = '';
       },
+      deleteReview(review) {
+        const index = this.$root.$data.reviews.indexOf(review);
+        if (index > -1) {
+          this.$root.$data.reviews.splice(index, 1);
+        }
+      }
     },
   }
 </script>
@@ -158,7 +167,8 @@
     padding: 50px auto;
   }
 
-  .in, textarea {
+  .in,
+  textarea {
     padding: 5px;
     margin: 10px;
   }
